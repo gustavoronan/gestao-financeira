@@ -10,21 +10,48 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
+@Data
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long idCategoria;
-	double nome;
+	private long idCategoria;
+	public long getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<Despesas> getDespesas() {
+		return despesas;
+	}
+
+	public void setDespesas(List<Despesas> despesas) {
+		this.despesas = despesas;
+	}
+
+	private String nome;
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;

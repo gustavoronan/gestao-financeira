@@ -20,9 +20,9 @@ import lombok.Setter;
 public class Despesas {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long idDespesa;
-	double valor;
-	String descricao;
+	private long idDespesa;
+	private double valor;
+	private String descricao;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	@ManyToOne
     @JoinColumn(name = "usuario_id")
