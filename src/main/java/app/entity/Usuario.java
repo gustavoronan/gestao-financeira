@@ -12,9 +12,9 @@ import jakarta.persistence.OneToMany;
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long idUser;
-	String email;
-	String senha;
+	private Long idUser;
+	private String email;
+	private String senha;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private List<Despesas> despesas;
