@@ -35,7 +35,7 @@ public class CategoriaController {
 	}
 
 	@PutMapping("/update/{idCategoria}")
-	public ResponseEntity<String> update (@RequestBody Categoria categoria, @PathVariable long idCategoria) {
+	public ResponseEntity<String> update (@RequestBody Categoria categoria, @PathVariable Long idCategoria) {
 
 		try {
 			String mensagem = this.categoriaService.update(categoria, idCategoria);
@@ -47,7 +47,7 @@ public class CategoriaController {
 	}
 
 	@DeleteMapping("/delete/{idCategoria}")
-	public ResponseEntity<String> delete ( @PathVariable long idCategoria) {
+	public ResponseEntity<String> delete ( @PathVariable Long idCategoria) {
 		try {
 			String mensagem = this.categoriaService.delete(idCategoria);
 			return new ResponseEntity<>(mensagem, HttpStatus.OK);
@@ -69,7 +69,7 @@ public class CategoriaController {
 	}
 
 	@GetMapping("findById/{idCategoria}")
-	public ResponseEntity<Categoria> FindById(@PathVariable long idCategoria) {
+	public ResponseEntity<Categoria> FindById(@PathVariable Long idCategoria) {
 
 		try {
 			Categoria categoria = this.categoriaService.findById(idCategoria);

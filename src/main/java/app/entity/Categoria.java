@@ -18,12 +18,12 @@ import lombok.Data;
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idCategoria;
-	public long getIdCategoria() {
+	private Long idCategoria;
+	public Long getIdCategoria() {
 		return idCategoria;
 	}
 
-	public void setIdCategoria(long idCategoria) {
+	public void setIdCategoria(Long idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 
