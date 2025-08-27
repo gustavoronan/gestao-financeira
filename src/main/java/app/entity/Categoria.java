@@ -2,6 +2,8 @@ package app.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -54,8 +56,10 @@ public class Categoria {
 	private String nome;
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
+	@JsonIgnoreProperties({"despesas"})
 	private Usuario usuario;
 	
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({"categoria", "usuario"})
     private List<Despesas> despesas;
 }

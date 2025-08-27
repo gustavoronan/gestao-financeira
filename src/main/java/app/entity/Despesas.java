@@ -28,7 +28,7 @@ public class Despesas {
     private Usuario usuario;
 	@ManyToOne
     @JoinColumn(name = "categoria_id")
-	@JsonIgnoreProperties("despesas") 
+	@JsonIgnoreProperties({"despesas", "usuario"})
     private Categoria categoria;
 	
 	public Long getIdDespesa() {
